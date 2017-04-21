@@ -31,7 +31,7 @@
   	firebase.auth().onAuthStateChanged(firebaseUser => {
   		if(firebaseUser){
   			console.log(firebaseUser);
-  			document.location.href = 'index.html';
+  			//document.location.href = 'index.html';
   		} else {
   			console.log('not logged in');
   		}
