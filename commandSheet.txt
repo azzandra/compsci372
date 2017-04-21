@@ -1,0 +1,9 @@
+git clone <url>  //get the git repository
+
+git status //let you know the status of your local repository compaired to others
+
+git pull //pull changes others made
+
+git add <file name> //adds files changes to local repository
+
+git commit -m "changes" //commits the changes to github 
