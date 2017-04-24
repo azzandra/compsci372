@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>index</title>
+    <title>Employee List</title>
 
     <!-- Bootstrap -->
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,8 +29,8 @@
 
           <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Employee List</a></li>
+                <li><a href="#">Home</a></li>
+                <li class="active"><a href="#">Employee List</a></li>
                 <li><a href="#">Page B</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
@@ -40,18 +40,18 @@
         </div>
     </nav>
 
-    
-    <input id="userName" type="userName" placeholder="userName" class="form-control">
+    <input id="userName" type="userName" placeholder="User Name" class="form-control">
     <input id="firstName" type="firstName" placeholder="First name" class="form-control">
     <input id="lastName" type="lastName" placeholder="Last name" class="form-control">
     <button id="addUser" class="btn btn-primary">Add</button>
    
-    <table class="table">
-    <thead>
-    <tr>
-      <td>firstName</td>
-      <td>lastName</td>
-      </tr>
+    <table class="table table-bordered table-hover table-condensed">
+      <thead class="thead-default">
+       <tr class="info">
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Remove</th>
+        </tr>
       </thead>
     <tbody id="tableBody"></tbody>
     </table>
