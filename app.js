@@ -32,6 +32,15 @@
     firebaseRef.once('value', function(snapshot) {
       if (snapshot.hasChild(user))
         {
+          
+          
+          firebase.database().ref("Employees/" + user + "/Password").once('value').then(function(snapshot){
+            var employeesPass = snapshot.val().Password;
+            document.getElementById("result").innerHTML = employeesPass;
+
+          });
+
+
           localStorage.setItem("UserName", user);
           
         }
@@ -41,9 +50,9 @@
           
         }
 
-        document.getElementById("result").innerHTML = localStorage.getItem("UserName");
+        //document.getElementById("result").innerHTML = localStorage.getItem("UserName");
+        //document.getElementById("result").innerHTML = employeesPass;
     });
-
 
     
     
