@@ -30,19 +30,29 @@
           <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
                 <li><a href="EmployerIndex.html">Home</a></li>
-                <li class="active"><a href="#">Employee List</a></li>
-                <li><a href="#">Page B</a></li>
+                <li class="active"><a href="EmployeeList.html">Employee List</a></li>
+                <li><a href="EmployeeInfo.html">Employee Info</a></li>
+                <li><a href="ViewSchedule.html">View Schedule</a></li>
+                <li><a href="CreateSchedule.html">Create Schedule</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+                <li><a id="logout"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
               </ul>
           </div>
         </div>
     </nav>
 
     <input id="userName" type="userName" placeholder="User Name" class="form-control">
+    <input id="password" type="password" placeholder="Password" class="form-control">
     <input id="firstName" type="firstName" placeholder="First name" class="form-control">
     <input id="lastName" type="lastName" placeholder="Last name" class="form-control">
+    <input id="employeeID" type="employeeID" placeholder="ID" class="form-control">
+    <input id="position" type="position" placeholder="Position" class="form-control">
+    <input id="gender" type="gender" placeholder="Gender" class="form-control">
+    <input id="phoneNumber" type="phoneNumber" placeholder="Phone Number" class="form-control">
+    <input id="department" type="department" placeholder="Department" class="form-control">
+    
+
     <button id="addUser" class="btn btn-primary">Add</button>
    
     <table class="table table-bordered table-hover table-condensed">

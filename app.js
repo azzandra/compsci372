@@ -17,8 +17,10 @@
   const inputPass = document.getElementById('inputPass');
   const login = document.getElementById('login');
 
-  //local storage
+  //local storage $ pass
    localStorage.setItem("UserName", null);
+   var password = null;
+   var LoggedIn = false;
 
   //add login event
   login.addEventListener('click', e => {
@@ -27,6 +29,7 @@
     const user = inputUsername.value;
     const pass = inputPass.value;
 
+    
     var firebaseRef = firebase.database().ref("Employees");
 
     firebaseRef.once('value', function(snapshot) {
@@ -34,19 +37,40 @@
         {
           
           
-          firebase.database().ref("Employees/" + user + "/Password").once('value').then(function(snapshot){
-            var employeesPass = snapshot.val().Password;
-            document.getElementById("result").innerHTML = employeesPass;
-
+          var firebasePass = firebase.database().ref().child("Employees/" + user + "/Password");
+          firebasePass.on('value', function(datasnapshot){
+            password = datasnapshot.val();
           });
 
+          if ( password == pass)
+          {
+            localStorage.setItem("UserName", user);
+            document.getElementById("result").innerHTML = "Success"
+            LoggedIn = true;
 
-          localStorage.setItem("UserName", user);
+          }
+
+          else
+          {
+            localStorage.setItem("UserName", null);
+            document.getElementById("result").innerHTML = "Incorrect User or pass";
+            password = null;
+            LoggedIn = false;
+
+           
+          }
+
+          }
           
-        }
+        
+        
         else
         {
           localStorage.setItem("UserName", null);
+          document.getElementById("result").innerHTML = "Incorrect User or pass";
+          password = null;
+          LoggedIn = false;
+
           
         }
 
@@ -55,6 +79,12 @@
     });
 
     
+    if (LoggedIn == true)
+    {
+
+      document.location.href = 'Employer/EmployerIndex.html';
+    }
+
     
   });
 
