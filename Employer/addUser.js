@@ -80,8 +80,9 @@ rootRef.on("child_added", snap => {
 
   var firstName = snap.child("FirstName").val();
   var lastName = snap.child("LastName").val();
+  var tableUser = snap.child("Username").val();
 
-  $("#tableBody").append("<tr><td>" + firstName + "</td><td>" + lastName + "</td><td><button>remove</button></td></tr>");
+  $("#tableBody").append("<tr><td>" + firstName + "</td><td>" + lastName + "</td><td><" + tableUser + "</td></tr>");
 
 });
 
