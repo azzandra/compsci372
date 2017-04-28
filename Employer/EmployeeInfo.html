@@ -36,7 +36,7 @@
                 <li><a href="CreateSchedule.html">Create Schedule</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="../login.html"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+                <li><a id="logout"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
               </ul>
           </div>
         </div>
@@ -44,12 +44,7 @@
 <h3>Welcome</h3>
 <div class="form-group">
   <label for="selectEmployee">Select Employee:</label>
-  <select class="form-control" id="selectEmployee">
-    <option>Select</option>
-    <option>Employee2</option>
-    <option>Employee3</option>
-    <option>Employee4</option>
-  </select>
+  <div id = "userSelection" onchange="change()"></div>
 </div>
 <div class="container">
       <div class="row">
@@ -63,7 +58,7 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Name</h3>
+              <h3 class="panel-title" id = "name">Name</h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -72,50 +67,28 @@
                     <tbody>
                       <tr>
                         <td>ID:</td>
-                        <td>insert here</td>
+                        <td id = "insertID">insert here</td>
                       </tr>
                       <tr>
                         <td>Position:</td>
-                        <td>insert here</td>
+                        <td id = "insertPosition">insert here</td>
                       </tr>
                       <tr>
-                        <td>Executive Tier:</td>
-                        <td>insert here</td>
-                      </tr>
-                   
-                         <tr>
-                             <tr>
                         <td>Gender:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                        <td>Address:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                        <td>Email:</td>
-                        <td><a href="insert here">insert here</a></td>
-                      <tr>
-                        <td>Phone Number:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                        <td>Building:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                          <td>Building Address:</td>
-                          <td> insert here</td>
-                      </tr>
-                      <tr>
-                          <td>Department:</td>
-                          <td>insert here</td>
-                      </tr>
-                      <tr>
-                          <td>Benefits:</td>
-                          <td>insert here</td>
+                        <td id = "insertGender">insert here</td>
                       </tr>
                      
+                      <tr>
+                        <td>Email:</td>
+                        <td id = "insertEmail">insert here</td>
+                      <tr>
+                        <td>Phone Number:</td>
+                        <td id = "insertPhoneNumber">insert here</td>
+                      </tr>
+                          <td>Department:</td>
+                          <td id = "insertDepartment">insert here</td>
+                      </tr>
+                                           
                     </tbody>
                   </table>
                 </div>
@@ -123,58 +96,7 @@
             </div>
           </div>
           <!--I would love to get these side by side if i have the time. That would look nicer but for now this works -->
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">Availability</h3>
-            </div>
-            <div class="panel-body">
-              <div class="row">
-                <div class=" col-md-9 col-lg-9 "> 
-                  <table class="table table-user-information">
-                    <tbody>
-                      <tr>
-                        <td>Hours/Week:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                        <td>Days/Week:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                        <td>Monday:</td>
-                        <td>insert here</td>
-                      </tr>
-                   
-                         <tr>
-                             <tr>
-                        <td>Tuesday:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                        <td>Wednesday:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                        <td>Thursday:</td>
-                        <td>insert here</td>
-                      <tr>
-                        <td>Friday:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                        <td>Saturday:</td>
-                        <td>insert here</td>
-                      </tr>
-                      <tr>
-                        <td>Sunday:</td>
-                        <td>insert here</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </div>
     </div>
@@ -182,5 +104,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="employeeInfo.js"></script>
   </body>
 </html>

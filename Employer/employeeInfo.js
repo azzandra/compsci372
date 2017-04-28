@@ -1,3 +1,8 @@
+
+  //selection variables
+  var newSelect=document.createElement('select');
+  var selectHTML="";
+
 (function(){
 
   //catch for logged out
@@ -23,7 +28,24 @@ if (templog == null)
   //var firebaseRef = firebase.database().ref();
   var firebaseRef = firebase.database().ref("Employees");
 
-  
+
+//child snapshot for users
+  var rootRef = firebase.database().ref().child("Employees");
+
+
+
+  //data snapshot for users. this cycles through all current users
+  rootRef.on("child_added", snap => {
+
+   var user = snap.child("UserName").val();
+
+   selectHTML+= "<option value='"+user+"'>"+user+"</option>";
+   newSelect.innerHTML= selectHTML;
+
+  });
+
+  //editing inner html for user pull down
+  document.getElementById('userSelection').appendChild(newSelect);
 
 //logout Listener
 const logout = document.getElementById('logout');
@@ -35,18 +57,48 @@ logout.addEventListener('click', e => {
 });
 
 
-var newSelect=document.createElement('select');
-    var selectHTML="";
-   /* for(i=0; i<choices.length; i=i+1){
-        selectHTML+= "<option value='"+choices[i]+"'>"+choices[i]+"</option>";
-    }*/
-    selectHTML+= "<option value='test'>test</option>";
-    selectHTML+= "<option value='test'>test2</option>";
-
-    newSelect.innerHTML= selectHTML;
-    document.getElementById('book_selection').appendChild(newSelect);
-
-
 }());
 
+function change() {
 
+
+
+  //get username from pull down
+  const userName = document.getElementById('userSelection').appendChild(newSelect);
+  const user = userName.value;
+
+ 
+  var firebaseID = firebase.database().ref().child("Employees/" + user + "/EmployeeID");
+          firebaseID.on('value', function(datasnapshot){
+            document.getElementById("insertID").innerHTML = datasnapshot.val();
+            });
+
+  var firebasePosition = firebase.database().ref().child("Employees/" + user + "/Position");
+          firebasePosition.on('value', function(datasnapshot){
+            document.getElementById("insertPosition").innerHTML = datasnapshot.val();
+            });
+
+  var firebaseGender = firebase.database().ref().child("Employees/" + user + "/Gender");
+          firebaseGender.on('value', function(datasnapshot){
+            document.getElementById("insertGender").innerHTML = datasnapshot.val();
+            });
+
+  var firebaseEmail = firebase.database().ref().child("Employees/" + user + "/Email");
+          firebaseEmail.on('value', function(datasnapshot){
+            document.getElementById("insertEmail").innerHTML = datasnapshot.val();
+            });
+
+  var firebasePhone = firebase.database().ref().child("Employees/" + user + "/PhoneNumber");
+          firebasePhone.on('value', function(datasnapshot){
+            document.getElementById("insertPhoneNumber").innerHTML = datasnapshot.val();
+            });
+
+   var firebaseDepartment = firebase.database().ref().child("Employees/" + user + "/Department");
+          firebaseDepartment.on('value', function(datasnapshot){
+            document.getElementById("insertDepartment").innerHTML = datasnapshot.val();
+            });
+
+
+
+           
+}
