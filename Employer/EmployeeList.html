@@ -36,7 +36,7 @@
                 <li><a href="CreateSchedule.html">Create Schedule</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a id="logout"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+                <li><a onclick="logout()"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
               </ul>
           </div>
         </div>
@@ -51,15 +51,16 @@
     <input id="gender" type="gender" placeholder="Gender" class="form-control">
     <input id="phoneNumber" type="phoneNumber" placeholder="Phone Number" class="form-control">
     <input id="department" type="department" placeholder="Department" class="form-control">
+    <input id="email" type="email" placeholder="email" class="form-control">
     
 
     <button id="addUser" class="btn btn-primary">Add</button>
    
    <div class="panel-body">
       <div class="row">
-        <div class=" col-md-9 col-lg-9 "> 
+        <div class="col-md-4 col-md-offset-4"> 
           <table class="table table-user-information">
-            <tbody>
+            <tbody id="tableBody">
               <tr class="info">
                <th>First Name</th>
                <th>Last Name</th>
@@ -76,5 +77,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="addUser.js"></script>
+    <script src="../logout.js"></script>
   </body>
 </html>

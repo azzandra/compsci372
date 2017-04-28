@@ -76,14 +76,34 @@
 
         //document.getElementById("result").innerHTML = localStorage.getItem("UserName");
         //document.getElementById("result").innerHTML = employeesPass;
-    });
+
+         if (LoggedIn == true)
+      {
+        
+
+        var firebasePosition = firebase.database().ref().child("Employees/" + user + "/Position");
+          firebasePosition.on('value', function(datasnapshot){
+          
+           if (datasnapshot.val() == "admin")
+          {
+            document.location.href = 'Employer/EmployerIndex.html';
+          }
+
+          else
+          {
+            
+            document.location.href = 'Employee/EmployeeIndex.html';
+          }
+
+            });
+       
+      }
+
+
+     });
 
     
-    if (LoggedIn == true)
-    {
-
-      document.location.href = 'Employer/EmployerIndex.html';
-    }
+   
 
     
   });

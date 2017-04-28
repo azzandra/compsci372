@@ -47,14 +47,6 @@ if (templog == null)
   //editing inner html for user pull down
   document.getElementById('userSelection').appendChild(newSelect);
 
-//logout Listener
-const logout = document.getElementById('logout');
-logout.addEventListener('click', e => {
-
-  localStorage.setItem("UserName", null);
-  document.location.href = '../login.html';
-
-});
 
 
 }());

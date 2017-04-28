@@ -34,6 +34,7 @@ if (templog == null)
   const phoneNumber = document.getElementById('phoneNumber');
   const department = document.getElementById('department');
   const lastName = document.getElementById('lastName');
+  const email = document.getElementById('email');
 
 
 
@@ -55,6 +56,7 @@ if (templog == null)
     const phone = phoneNumber.value;
     const depart = department.value;
     const last = lastName.value;
+    const em = email.value;
 
 
 
@@ -67,7 +69,9 @@ if (templog == null)
       Position: pos,
       Gender: gen,
       PhoneNumber: phone,
-      Department: depart
+      Department: depart,
+      Email: em
+
 
     });
   	
@@ -80,23 +84,12 @@ rootRef.on("child_added", snap => {
 
   var firstName = snap.child("FirstName").val();
   var lastName = snap.child("LastName").val();
-  var tableUser = snap.child("Username").val();
+  var tableUser = snap.child("UserName").val();
 
-  $("#tableBody").append("<tr><td>" + firstName + "</td><td>" + lastName + "</td><td><" + tableUser + "</td></tr>");
 
-});
-
-//logout Listener
-const logout = document.getElementById('logout');
-logout.addEventListener('click', e => {
-
-  localStorage.setItem("UserName", null);
-  document.location.href = '../login.html';
+  $("#tableBody").append("<tr><td>" + firstName + "</td><td>" + lastName + "</td><td>" + tableUser + "</td></tr>");
 
 });
-
-
-//alert(localStorage.getItem("UserName"))
 
 
 

@@ -1,6 +1,6 @@
 function logout() {
 	
 	localStorage.setItem("UserName", null);
-	document.location.href = 'login.html';
+	document.location.href = '../login.html';
 	
 }
