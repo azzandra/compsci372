@@ -84,7 +84,7 @@
         var firebasePosition = firebase.database().ref().child("Employees/" + user + "/Position");
           firebasePosition.on('value', function(datasnapshot){
           
-           if (datasnapshot.val() == "admin")
+           if (datasnapshot.val() == "admin" || datasnapshot.val() == "manager")
           {
             document.location.href = 'Employer/EmployerIndex.html';
           }

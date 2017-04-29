@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Employee List</title>
+    <title>Project</title>
 
     <!-- Bootstrap -->
     <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -41,18 +41,22 @@
           </div>
         </div>
     </nav>
+
+    <div id="dropWeek"></div>
+
+    
    <!--populate this table with the employee names and then inputs that can be edited and a save button similar to your employeeList page-->
     <table class="table table-bordered table-hover table-condensed">
       <thead class="thead-default">
        <tr class="info">
           <th>Name</th>
+          <th>Sunday</th>
           <th>Monday</th>
           <th>Tuesday</th>
           <th>Wednesday</th>
           <th>Thursday</th>
           <th>Friday</th>
           <th>Saturday</th>
-          <th>Sunday</th>
         </tr>
       </thead>
     <tbody id="tableBody"></tbody>
@@ -64,5 +68,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="../logout.js"></script>
+    <script src= "CreateSchedule.js"></script>
   </body>
 </html>

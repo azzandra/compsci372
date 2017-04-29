@@ -2,6 +2,8 @@
   //selection variables
   var newSelect=document.createElement('select');
   var selectHTML="";
+  selectHTML+= "<option value='select'>Select Employee</option>";
+  newSelect.innerHTML= selectHTML;
 
 (function(){
 
@@ -94,3 +96,5 @@ function change() {
 
            
 }
+
+
