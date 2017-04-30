@@ -36,14 +36,16 @@
       if (snapshot.hasChild(user))
         {
           
-          
+          console.log("first snap");
+
           var firebasePass = firebase.database().ref().child("Employees/" + user + "/Password");
           firebasePass.on('value', function(datasnapshot){
             password = datasnapshot.val();
-          });
 
-          if ( password == pass)
+            console.log("second snap", password);
+             if ( password == pass)
           {
+            console.log("pass=pass snap");
             localStorage.setItem("UserName", user);
             document.getElementById("result").innerHTML = "Success"
             LoggedIn = true;
@@ -60,24 +62,8 @@
            
           }
 
-          }
-          
-        
-        
-        else
-        {
-          localStorage.setItem("UserName", null);
-          document.getElementById("result").innerHTML = "Incorrect User or pass";
-          password = null;
-          LoggedIn = false;
 
-          
-        }
-
-        //document.getElementById("result").innerHTML = localStorage.getItem("UserName");
-        //document.getElementById("result").innerHTML = employeesPass;
-
-         if (LoggedIn == true)
+                   if (LoggedIn == true)
       {
         
 
@@ -98,6 +84,32 @@
             });
        
       }
+
+
+          });
+
+
+
+         
+
+          }
+          
+        
+        
+        else
+        {
+          localStorage.setItem("UserName", null);
+          document.getElementById("result").innerHTML = "Incorrect User or pass";
+          password = null;
+          LoggedIn = false;
+
+          
+        }
+
+        //document.getElementById("result").innerHTML = localStorage.getItem("UserName");
+        //document.getElementById("result").innerHTML = employeesPass;
+
+
 
 
      });
