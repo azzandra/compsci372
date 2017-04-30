@@ -44,25 +44,25 @@
 
     <div id="dropWeek"></div>
 
-    
-   <!--populate this table with the employee names and then inputs that can be edited and a save button similar to your employeeList page-->
-    <table class="table table-bordered table-hover table-condensed">
-      <thead class="thead-default">
-       <tr class="info">
-          <th>Name</th>
-          <th>Sunday</th>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
-        </tr>
-      </thead>
-    <tbody id="tableBody"></tbody>
-    </table>
-    <p>pull in the employee names and populare the columns with inputs that can be edited</p>
-    <button id="saveEmployeeInfo" class="btn btn-primary">Save</button>
+    <div>
+
+    <div id = "dropEmployees"></div>
+
+    <select id = "dropDay">
+      <option>Sunday</option>
+      <option>Monday</option>
+      <option>Tuesday</option>
+      <option>Wednesday</option>
+      <option>Thursday</option>
+      <option>Friday</option>
+      <option>Saturday</option>
+      </select>
+    <input id = "Time" type = "input time" placeholder="Time: #am-#pm" class = "form-control">
+
+    </div>
+
+
+    <button id="addTime" class="btn btn-primary">add</button>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

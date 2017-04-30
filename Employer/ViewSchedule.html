@@ -41,21 +41,25 @@
           </div>
         </div>
     </nav>
+
+
+    <div id="dropWeek" onchange="change()"></div>
    <!--populate this table with the employee info/schedule. This only supports a weekly schedule OR a company where everyone works a set schedule every week-->
     <table class="table table-bordered table-hover table-condensed">
+    <tbody id="tableBody">
       <thead class="thead-default">
        <tr class="info">
           <th>Name</th>
+          <th>Sunday</th>
           <th>Monday</th>
           <th>Tuesday</th>
           <th>Wednesday</th>
           <th>Thursday</th>
           <th>Friday</th>
           <th>Saturday</th>
-          <th>Sunday</th>
         </tr>
       </thead>
-    <tbody id="tableBody"></tbody>
+    </tbody>
     </table>
 <p>pull from the database and populate the table</p>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -63,5 +67,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="../logout.js"></script>
+    <script src="ViewSchedule.js"></script>
   </body>
 </html>
