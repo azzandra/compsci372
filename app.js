@@ -92,7 +92,7 @@
           else
           {
             
-            document.location.href = 'Employee/EmployeeIndex.html';
+            document.location.href = 'Employee/EmployeeSchedule.html';
           }
 
             });
@@ -108,5 +108,6 @@
     
   });
 
+  
 
 }());
