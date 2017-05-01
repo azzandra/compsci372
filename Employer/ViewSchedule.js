@@ -5,9 +5,6 @@
   newSelect.innerHTML= selectHTML;
 
 
-  //
-  var Monday = [];
-
 (function(){
   
   // Initialize Firebase
@@ -45,108 +42,90 @@
 document.getElementById("dropWeek").appendChild(newSelect);
 
 
-
-
-
-
-
-
-
-
-  const saveEmployeeInfo = document.getElementById('saveEmployeeInfo');
-
-
-  saveEmployeeInfo.addEventListener('click', e => {
-
-
-firebase.database().ref("Weeks/4-23-2017/shelrj13").update({ title: "New title"});
-
-
-
- });
   
 
 }());
 
 
 function change() {
-
-
   
- while(tableBody.rows.length > 0){
-  table.deleteRow(0);
- } 
+  var Table1 = document.getElementById("tableBodySunday");
+  Table1.innerHTML = "";
 
+   var Table2 = document.getElementById("tableBodyMonday");
+  Table2.innerHTML = "";
+
+   var Table3 = document.getElementById("tableBodyTuesday");
+  Table3.innerHTML = "";
+
+   var Table4 = document.getElementById("tableBodyWednesday");
+  Table4.innerHTML = "";
+
+   var Table5 = document.getElementById("tableBodyThursday");
+  Table5.innerHTML = "";
+
+   var Table6 = document.getElementById("tableBodyFriday");
+  Table6.innerHTML = "";
+
+   var Table7 = document.getElementById("tableBodySaturday");
+  Table7.innerHTML = "";
+  
+  
   //get Week from pull down
   const dropweek = document.getElementById('dropWeek').appendChild(newSelect);
   const week = dropweek.value;
 
-  //console read week
-  //console.log(week);
+  var rootSchedule = firebase.database().ref().child("Weeks/" + week);
 
-  //reference for dropdown week
-  var rootRef = firebase.database().ref().child("Weeks/"+ week + "/Monday");
+  rootSchedule.on('value',function(snapshot){
 
-  //snapshot of week
-  rootRef.on("child_added", snap => {
-    var admin = snap.child("admin").val();
-    //console.log(admin);
-
-
-  });
-
-  rootRef.once("value",function(snapshot){
-
-    //var temp = snapshot.child("Monday");
-   // var name = temp.val();
-
-    //console.log(name);
-
-
-    snapshot.forEach(function(childSnapshot){
+  snapshot.forEach(function(childSnapshot){
       var key = childSnapshot.key;
-      var childData = childSnapshot.val();
+      
+      childSnapshot.forEach(function(childSnapshot){
+        var childKey =childSnapshot.key
+        var childchild = childSnapshot.val();
 
+       
+          if(key == "Sunday")
+          {
+            $("#tableBodySunday").append("<tr><td>" + childKey + "</td><td>" + childchild + "</td></tr>");
+          }
+          if(key == "Monday")
+          {
+            $("#tableBodyMonday").append("<tr><td>" + childKey + "</td><td>" + childchild + "</td></tr>");
+          }
+          if(key == "Tuesday")
+          {
+            $("#tableBodyTuesday").append("<tr><td>" + childKey + "</td><td>" + childchild + "</td></tr>");
+          }
+          if(key == "Wednesday")
+          {
+            $("#tableBodyWednesday").append("<tr><td>" + childKey + "</td><td>" + childchild + "</td></tr>");
+          }
+          if(key == "Thursday")
+          {
+            $("#tableBodyThursday").append("<tr><td>" + childKey + "</td><td>" + childchild + "</td></tr>");
+          }
+          if(key == "Friday")
+          {
+            $("#tableBodyFriday").append("<tr><td>" + childKey + "</td><td>" + childchild + "</td></tr>");
+          }
+          if(key == "Saturday")
+          {
+            $("#tableBodySaturday").append("<tr><td>" + childKey + "</td><td>" + childchild + "</td></tr>");
+          }
+          
 
-    
-
-      //console.log("key: ",key);
-      //console.log("childData: ", childData);
-
-
-      var test = key +": " +childData;
-
-      console.log(test);
-
-      Monday.push(test);
-
+      });
+        
 
     });
-
-   
-
-  });
+});
 
 
 
 
-
-
-test();
       
 }
 
-
-function test(){
- // alert("hello");
-
-  var fill = "hello";
-
-console.log(Monday[0]);
-
-for (var i = 0 ; i < Monday.length ; i++)
-{
- 
-  $("#tableBody").append("<tr><td>" + Monday[i] + "</td><td>" + fill + "</td><td>" + fill + "</td></tr>");
-}
-}

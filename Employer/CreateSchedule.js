@@ -85,20 +85,76 @@ const date = datetemp.value;
 const timetemp = document.getElementById('Time')
 const time = timetemp.value;
 
-console.log("user: ",user);
-console.log("week: ",week);
-console.log("date: ",date);
-console.log("time: ",time);
-
 
 //firebase.database().ref("Weeks/4-23-2017/shelrj13").update({ title: "New title"});
 
-firebase.database().ref("Weeks/"+ week +"/" + user).update({ [date]: time});
+firebase.database().ref("Weeks/"+ week +"/" + date).update({ [user]: time});
+firebase.database().ref("UserWeeks/"+ week +"/" + user).update({ [date]: time});
 
 
-
+changeWeek();
 
  });
-  
+
+
+//fill off hours in
+
+var rootOff = firebase.database().ref().child("Off");
+
+rootOff.on('value',function(snapshot){
+
+  snapshot.forEach(function(childSnapshot){
+      var key = childSnapshot.key;
+      
+      childSnapshot.forEach(function(childSnapshot){
+        var childKey =childSnapshot.key
+        var childchild = childSnapshot.val();
+
+       
+
+          $("#tableBodyOff").append("<tr><td>" + key + "</td><td>" + childKey + "</td><td>" + childchild + "</td></tr>");
+
+      });
+        
+
+    });
+});
+
+
+
+
 
 }());
+
+function changeWeek(){
+
+  var Table = document.getElementById("tableBodyAdded");
+  Table.innerHTML = "";
+
+  const dropWeek = document.getElementById('dropWeek').appendChild(newSelect);
+  const week = dropWeek.value;
+
+var rootAdded = firebase.database().ref().child("Weeks/" + week);
+
+rootAdded.on('value',function(snapshot){
+
+  snapshot.forEach(function(childSnapshot){
+      var key = childSnapshot.key;
+      
+      childSnapshot.forEach(function(childSnapshot){
+        var childKey =childSnapshot.key
+        var childchild = childSnapshot.val();
+
+    
+
+          $("#tableBodyAdded").append("<tr><td>" + childKey + "</td><td>" + key + "</td><td>" + childchild + "</td></tr>");
+
+      });
+        
+
+    });
+});
+
+
+  }
+

@@ -45,23 +45,83 @@
 
     <div id="dropWeek" onchange="change()"></div>
    <!--populate this table with the employee info/schedule. This only supports a weekly schedule OR a company where everyone works a set schedule every week-->
+  <div class = "row col-md-offset-2">
+   
+    <!--Sunday-->
+    <div class = "row col-md-offset-2">
+    <div class="col-md-2">
     <table class="table table-bordered table-hover table-condensed">
-    <tbody id="tableBody">
-      <thead class="thead-default">
+      <tbody>
        <tr class="info">
-          <th>Name</th>
           <th>Sunday</th>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
-        </tr>
-      </thead>
+       </tr>
     </tbody>
+    <tbody id="tableBodySunday"></tbody>
     </table>
-<p>pull from the database and populate the table</p>
+    
+
+    <!--Monday-->
+    <table class="table table-bordered table-hover table-condensed">
+      <tbody>
+       <tr class="info">
+          <th>Monday</th>
+       </tr>
+    </tbody>
+    <tbody id="tableBodyMonday"></tbody>
+    </table>
+
+    <!--Tuesday-->
+    <table class="table table-bordered table-hover table-condensed">
+      <tbody>
+       <tr class="info">
+          <th>Tuesday</th>
+       </tr>
+    </tbody>
+    <tbody id="tableBodyTuesday"></tbody>
+    </table>
+
+    <!--Wednesday-->
+     <table class="table table-bordered table-hover table-condensed">
+      <tbody>
+       <tr class="info">
+          <th>Wednesday</th>
+       </tr>
+    </tbody>
+    <tbody id="tableBodyWednesday"></tbody>
+    </table>
+
+    <!--Thursday-->
+     <table class="table table-bordered table-hover table-condensed">
+      <tbody>
+       <tr class="info">
+          <th>Thursday</th>
+       </tr>
+    </tbody>
+    <tbody id="tableBodyThursday"></tbody>
+    </table>
+
+    <!--Friday-->
+     <table class="table table-bordered table-hover table-condensed">
+      <tbody>
+       <tr class="info">
+          <th>Friday</th>
+       </tr>
+    </tbody>
+    <tbody id="tableBodyFriday"></tbody>
+    </table>
+
+    <!--Saturday-->
+     <table class="table table-bordered table-hover table-condensed">
+      <tbody>
+       <tr class="info">
+          <th>Saturday</th>
+       </tr>
+    </tbody>
+    <tbody id="tableBodySaturday"></tbody>
+    </table>
+
+    </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
